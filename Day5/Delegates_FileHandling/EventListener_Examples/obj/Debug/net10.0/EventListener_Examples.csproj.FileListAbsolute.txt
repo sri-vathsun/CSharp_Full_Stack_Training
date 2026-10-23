@@ -1,0 +1,15 @@
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventListener_Examples.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventListener_Examples.AssemblyInfoInputs.cache
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventListener_Examples.AssemblyInfo.cs
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventListener_Examples.csproj.CoreCompileInputs.cache
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\bin\Debug\net10.0\EventListener_Examples.exe
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\bin\Debug\net10.0\EventListener_Examples.deps.json
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\bin\Debug\net10.0\EventListener_Examples.runtimeconfig.json
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\bin\Debug\net10.0\EventListener_Examples.dll
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\bin\Debug\net10.0\EventListener_Examples.pdb
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventListener_Examples.dll
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\refint\EventListener_Examples.dll
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventListener_Examples.pdb
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventListener_Examples.genruntimeconfig.cache
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\ref\EventListener_Examples.dll
+C:\Users\vaths\source\repos\EventListener_Examples\EventListener_Examples\obj\Debug\net10.0\EventLis.D6F4EA6A.Up2Date
