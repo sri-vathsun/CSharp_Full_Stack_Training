@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vaths\\source\\repos\\Retail_Order_Management\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2542DDC4-9FB8-7F8B-C734-91844F24DDD2}|Retail_Order_Management\\Retail_Order_Management.csproj|c:\\users\\vaths\\source\\repos\\retail_order_management\\retail_order_management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2542DDC4-9FB8-7F8B-C734-91844F24DDD2}|Retail_Order_Management\\Retail_Order_Management.csproj|solutionrelative:retail_order_management\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 84,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Retail_Order_Management\\Retail_Order_Management\\Program.cs",
+              "RelativeDocumentMoniker": "Retail_Order_Management\\Program.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Retail_Order_Management\\Retail_Order_Management\\Program.cs",
+              "RelativeToolTip": "Retail_Order_Management\\Program.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T06:42:11.268Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 164,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

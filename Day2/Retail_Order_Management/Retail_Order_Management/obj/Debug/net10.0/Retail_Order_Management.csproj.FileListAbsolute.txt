@@ -1,0 +1,15 @@
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\bin\Debug\net10.0\Retail_Order_Management.exe
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\bin\Debug\net10.0\Retail_Order_Management.deps.json
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\bin\Debug\net10.0\Retail_Order_Management.runtimeconfig.json
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\bin\Debug\net10.0\Retail_Order_Management.dll
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\bin\Debug\net10.0\Retail_Order_Management.pdb
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_Order_Management.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_Order_Management.AssemblyInfoInputs.cache
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_Order_Management.AssemblyInfo.cs
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_Order_Management.csproj.CoreCompileInputs.cache
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_Order_Management.dll
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\refint\Retail_Order_Management.dll
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_Order_Management.pdb
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_Order_Management.genruntimeconfig.cache
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\ref\Retail_Order_Management.dll
+C:\Users\vaths\source\repos\Retail_Order_Management\Retail_Order_Management\obj\Debug\net10.0\Retail_O.D9A81FE9.Up2Date
