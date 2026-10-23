@@ -1,0 +1,329 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\cartsummaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\cartsummaryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\shoppingcart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\expressdeliveryorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\expressdeliveryorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\loyaltyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\loyaltyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\cartsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\cartsummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\ordersummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\ordersummary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\inputhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\upipaymentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\upipaymentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\cardpaymentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\cardpaymentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\ipaymentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\ipaymentprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\shoppingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\shoppingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|c:\\users\\vaths\\source\\repos\\online_shopping_cart-order_management_system\\online_shopping_cart-order_management_system\\models\\standarddeliveryorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEEAF2C6-CC08-2464-43FB-BC54AEA8C366}|Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System.csproj|solutionrelative:online_shopping_cart-order_management_system\\models\\standarddeliveryorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 776,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Program.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Program.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Program.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Program.cs",
+              "ViewState": "AgIAALwAAAAAAAAAAAAwwNAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T13:39:11.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\Customer.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T14:30:27.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\Product.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T13:47:42.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoyaltyService.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\LoyaltyService.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\LoyaltyService.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\LoyaltyService.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\LoyaltyService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:49:59.713Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CartSummary.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CartSummary.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\CartSummary.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CartSummary.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\CartSummary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:50:42.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ExpressDeliveryOrder.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\ExpressDeliveryOrder.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\ExpressDeliveryOrder.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\ExpressDeliveryOrder.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\ExpressDeliveryOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:25:12.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShoppingCart.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingCart.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingCart.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingCart.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingCart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T14:37:15.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\Order.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:21:08.295Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CartItem.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T14:31:48.642Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartSummaryService.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CartSummaryService.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\CartSummaryService.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CartSummaryService.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\CartSummaryService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:51:03.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OrderSummary.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\OrderSummary.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\OrderSummary.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\OrderSummary.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\OrderSummary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:43:02.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\OrderService.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\OrderService.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\OrderService.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\OrderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:35:16.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InputHelper.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\InputHelper.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\InputHelper.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\InputHelper.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\InputHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:47:36.817Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UpiPaymentProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\UpiPaymentProcessor.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\UpiPaymentProcessor.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\UpiPaymentProcessor.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\UpiPaymentProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:34:03.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CardPaymentProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CardPaymentProcessor.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\CardPaymentProcessor.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\CardPaymentProcessor.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\CardPaymentProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:33:04.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IPaymentProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\IPaymentProcessor.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\IPaymentProcessor.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\IPaymentProcessor.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\IPaymentProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:32:08.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ShoppingService.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingService.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingService.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingService.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\ShoppingService.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAYwDQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:11:58.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "StandardDeliveryOrder.cs",
+              "DocumentMoniker": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\StandardDeliveryOrder.cs",
+              "RelativeDocumentMoniker": "Online_Shopping_Cart-Order_Management_System\\Models\\StandardDeliveryOrder.cs",
+              "ToolTip": "C:\\Users\\vaths\\source\\repos\\Online_Shopping_Cart-Order_Management_System\\Online_Shopping_Cart-Order_Management_System\\Models\\StandardDeliveryOrder.cs",
+              "RelativeToolTip": "Online_Shopping_Cart-Order_Management_System\\Models\\StandardDeliveryOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-13T15:22:51.78Z"
+            }
+          ]
+        },
+        {
+          "DockedHeight": 326,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
