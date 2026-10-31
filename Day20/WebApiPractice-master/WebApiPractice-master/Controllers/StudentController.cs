@@ -6,7 +6,6 @@ namespace WebApiPractice.Controllers;
 
 [ApiController]
 [Route("api/students")]
-public class StudentController : ControllerBase
 {
     private readonly IStudentService _studentService;
 
