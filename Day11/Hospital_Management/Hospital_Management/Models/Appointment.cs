@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace HospitalAppointmentManagement.Models;
 
-namespace Hospital_Management.Models
+public class Appointment
 {
-    internal class Appointment
-    {
-    }
+    public int AppointmentId { get; set; }
+    public int PatientId { get; set; }
+    public int DoctorId { get; set; }
+    public DateTime AppointmentDate { get; set; }
+    public DateTime BookedAt { get; set; }
+    public string Status { get; set; } = "Scheduled";
 }

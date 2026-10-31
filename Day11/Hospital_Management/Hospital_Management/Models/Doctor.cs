@@ -1,10 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace HospitalAppointmentManagement.Models;
 
-namespace Hospital_Management.Models
+public class Doctor
 {
-    internal class Doctor
-    {
-    }
+    public int DoctorId { get; set; }
+
+    public string DoctorName { get; set; } = string.Empty;
+
+    public string Specialization { get; set; } = string.Empty;
+
+    public decimal ConsultationFee { get; set; }
+
+    public int SlotMinutes { get; set; }
+
+    public int DepartmentId { get; set; }
+
+    public bool IsActive { get; set; } = true;
 }
