@@ -1,6 +1,16 @@
-﻿namespace Movie_Ticket_Booking_System.Data
+﻿using Microsoft.EntityFrameworkCore;
+using MovieTicketBooking.Models;
+
+namespace MovieTicketBooking.Data;
+
+public class ApplicationDbContext : DbContext
 {
-    public class ApplicationDbContext
+    public ApplicationDbContext(
+        DbContextOptions<ApplicationDbContext> options)
+        : base(options)
     {
     }
+
+    public DbSet<Movie> Movies => Set<Movie>();
+
 }
