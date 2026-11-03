@@ -1,0 +1,113 @@
+<div class="cinema-page">
+  <div class="section-container">
+    <div class="admin-form-header">
+      <div class="header-breadcrumb">
+        <a routerLink="/admin/screens" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Screens
+        </a>
+        <h1 class="admin-title">
+          <span class="admin-tag-pill">AUDITORIUM ARCHITECTURE</span>
+          Seat Layout Management
+        </h1>
+        <p class="admin-subtitle">Configure seating tiers, bulk generate rows, and manage screen capacity.</p>
+      </div>
+    </div>
+
+    <!-- Screen Selector Strip -->
+    <div class="filter-strip" style="margin-bottom: 2rem;">
+      <div class="filter-group" style="width: 100%;">
+        <label style="font-size: 0.95rem; font-weight: 700;">Select Screen to Configure:</label>
+        <select [(ngModel)]="bulkForm.value.screenId" (change)="onScreenChange()" class="cinema-select" style="flex: 1; padding: 0.65rem 1rem; font-size: 0.95rem;">
+          <option value="">-- Choose Screen --</option>
+          <option *ngFor="let s of screens" [value]="s.screenId">
+            🏢 {{ s.theatreName }} → {{ s.screenName }} (ID: #{{ s.screenId }})
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <div class="admin-split-layout">
+      <!-- Left: Bulk Generator Box -->
+      <div class="admin-glass-panel">
+        <div class="panel-section-title">
+          <h3>⚡ Bulk Seat Generator</h3>
+          <p>Add rows of seats to the selected auditorium.</p>
+        </div>
+
+        <form [formGroup]="bulkForm" (ngSubmit)="submitBulk()" class="admin-form">
+          <div formArrayName="seats" class="bulk-rows-list">
+            <div *ngFor="let seat of seatsArray.controls; let i = index" [formGroupName]="i" class="seat-builder-row">
+              <div class="builder-inputs">
+                <div class="builder-field">
+                  <label>Row</label>
+                  <input type="text" formControlName="rowName" class="custom-cinema-input builder-input" placeholder="A" maxlength="5" />
+                </div>
+                <div class="builder-field">
+                  <label>Seat #</label>
+                  <input type="number" formControlName="seatNumber" class="custom-cinema-input builder-input" min="1" />
+                </div>
+                <div class="builder-field flex-2">
+                  <label>Class</label>
+                  <select formControlName="seatType" class="custom-cinema-input custom-select builder-input">
+                    <option *ngFor="let type of seatTypes" [value]="type">{{ type }}</option>
+                  </select>
+                </div>
+              </div>
+              <button type="button" class="btn-icon delete remove-row-btn" (click)="removeSeatRow(i)" title="Remove Row">
+                ✕
+              </button>
+            </div>
+          </div>
+
+          <div class="builder-action-bar">
+            <button type="button" class="btn btn-hero-secondary btn-sm" (click)="addSeatRow()">
+              + Add Seat Entry
+            </button>
+          </div>
+
+          <div class="cinema-alert error" *ngIf="errorMessage">{{ errorMessage }}</div>
+          <div class="cinema-alert success" *ngIf="successMessage">{{ successMessage }}</div>
+
+          <div class="admin-form-actions" *ngIf="seatsArray.length > 0">
+            <button type="submit" class="btn btn-glow-primary btn-block" [disabled]="loading || bulkForm.invalid">
+              <span>{{ loading ? 'Generating Seats...' : 'Commit ' + seatsArray.length + ' Seats to Screen' }}</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right: Current Seating Layout Visualizer -->
+      <div class="preview-panel">
+        <div class="preview-label">AUDITORIUM INVENTORY ({{ seats.length }} SEATS)</div>
+
+        <div class="auditorium-box" style="padding: 1.5rem;">
+          <div class="screen-stage" style="margin-bottom: 2rem;">
+            <div class="curved-screen"></div>
+            <div class="screen-caption">SCREEN DIRECTION</div>
+          </div>
+
+          <div class="seats-matrix" *ngIf="seats.length > 0" style="max-height: 380px; overflow-y: auto;">
+            <div *ngFor="let seat of seats" class="seat-chair available"
+              [class.vip]="seat.seatType === 'VIP'"
+              [class.premium]="seat.seatType === 'Premium'"
+              [title]="seat.seatLabel + ' - ' + seat.seatType">
+              <div class="chair-back">{{ seat.seatLabel }}</div>
+              <div class="chair-base"></div>
+              <button class="delete-seat-x" (click)="deleteSeat(seat.seatId)" title="Delete this seat">×</button>
+            </div>
+          </div>
+
+          <div *ngIf="seats.length === 0" class="empty-cinema-state" style="padding: 2rem 1rem;">
+            <div class="empty-icon">💺</div>
+            <h4>No Seats Configured</h4>
+            <p>Select a screen and generate seats on the left.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

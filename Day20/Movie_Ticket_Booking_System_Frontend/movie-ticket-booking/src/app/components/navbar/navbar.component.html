@@ -1,0 +1,70 @@
+<header class="navbar-wrapper">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a routerLink="/" class="nav-brand">
+        <span class="brand-logo-badge">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
+            <line x1="7" y1="2" x2="7" y2="22"></line>
+            <line x1="17" y1="2" x2="17" y2="22"></line>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <line x1="2" y1="7" x2="7" y2="7"></line>
+            <line x1="2" y1="17" x2="7" y2="17"></line>
+            <line x1="17" y1="17" x2="22" y2="17"></line>
+            <line x1="17" y1="7" x2="22" y2="7"></line>
+          </svg>
+        </span>
+        <span class="brand-name">Cine<span class="brand-gradient">Pass</span></span>
+      </a>
+
+      <div class="nav-links">
+        <a routerLink="/movies" routerLinkActive="active" class="nav-pill">
+          <span>🎬</span> Movies
+        </a>
+        <a routerLink="/shows" routerLinkActive="active" class="nav-pill">
+          <span>🍿</span> Shows
+        </a>
+        <a *ngIf="authService.isLoggedIn()" routerLink="/bookings" routerLinkActive="active" class="nav-pill">
+          <span>🎟️</span> My Bookings
+        </a>
+
+        <ng-container *ngIf="authService.isAdmin()">
+          <span class="nav-separator"></span>
+          <div class="admin-dropdown-pills">
+            <span class="admin-label">ADMIN</span>
+            <a routerLink="/admin/theatres" routerLinkActive="active" class="nav-pill admin-pill">Theatres</a>
+            <a routerLink="/admin/screens" routerLinkActive="active" class="nav-pill admin-pill">Screens</a>
+            <a routerLink="/admin/seats" routerLinkActive="active" class="nav-pill admin-pill">Seats</a>
+          </div>
+        </ng-container>
+      </div>
+
+      <div class="nav-auth">
+        <ng-container *ngIf="authService.isLoggedIn(); else guestNav">
+          <div class="user-badge" [class.admin-user]="authService.isAdmin()">
+            <div class="user-avatar-circle">
+              {{ (authService.currentUser$ | async)?.unique_name?.charAt(0) || 'U' }}
+            </div>
+            <div class="user-info">
+              <span class="user-display-name">{{ (authService.currentUser$ | async)?.unique_name }}</span>
+              <span class="user-role-tag">{{ (authService.currentUser$ | async)?.role }}</span>
+            </div>
+          </div>
+          <button class="btn btn-glass-danger btn-sm" (click)="logout()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            Sign Out
+          </button>
+        </ng-container>
+
+        <ng-template #guestNav>
+          <a routerLink="/login" class="btn btn-ghost btn-sm">Sign In</a>
+          <a routerLink="/register" class="btn btn-glow-primary btn-sm">Join Now</a>
+        </ng-template>
+      </div>
+    </div>
+  </nav>
+</header>

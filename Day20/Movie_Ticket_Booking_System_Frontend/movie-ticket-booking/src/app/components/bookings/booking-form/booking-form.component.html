@@ -1,0 +1,163 @@
+<div class="cinema-page" *ngIf="show">
+  <div class="section-container">
+    <div class="seat-selection-header">
+      <div class="header-left">
+        <a routerLink="/shows" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Shows
+        </a>
+        <h1 class="booking-movie-title">{{ show.movieTitle }}</h1>
+        <div class="booking-show-meta">
+          <span>🏢 {{ show.theatreName }}</span>
+          <span>•</span>
+          <span class="auditorium-name">{{ show.screenName }}</span>
+          <span>•</span>
+          <span>⏰ {{ show.startTime | date:'EEE, MMM d • h:mm a' }}</span>
+        </div>
+      </div>
+
+      <div class="price-indicator">
+        <span class="label">TICKET PRICE</span>
+        <span class="val">₹{{ show.ticketPrice }}</span>
+      </div>
+    </div>
+
+    <!-- Booking Layout -->
+    <div class="cinema-seat-layout">
+      <!-- Seating Auditorium Area -->
+      <div class="auditorium-box">
+        <!-- Curved Cinema Screen with Projector Beam -->
+        <div class="screen-stage">
+          <div class="projector-glow"></div>
+          <div class="curved-screen"></div>
+          <div class="screen-caption">SCREEN THIS WAY</div>
+        </div>
+
+        <!-- Seats Grid -->
+        <div class="seats-matrix">
+          <div *ngFor="let seat of seats"
+            class="seat-chair"
+            [class.available]="seat.status === 'Available'"
+            [class.booked]="seat.status === 'Booked'"
+            [class.selected]="isSelected(seat.seatId)"
+            [class.vip]="seat.seatType === 'VIP'"
+            [class.premium]="seat.seatType === 'Premium'"
+            (click)="toggleSeat(seat)"
+            [title]="seat.seatLabel + ' (' + seat.seatType + ') - ' + seat.status">
+            <div class="chair-back">{{ seat.seatLabel }}</div>
+            <div class="chair-base"></div>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="seat-legend-bar">
+          <div class="legend-chip">
+            <div class="seat-chair available mini"><div class="chair-back"></div></div>
+            <span>Available</span>
+          </div>
+          <div class="legend-chip">
+            <div class="seat-chair selected mini"><div class="chair-back"></div></div>
+            <span>Selected</span>
+          </div>
+          <div class="legend-chip">
+            <div class="seat-chair premium mini"><div class="chair-back"></div></div>
+            <span>Premium</span>
+          </div>
+          <div class="legend-chip">
+            <div class="seat-chair vip mini"><div class="chair-back"></div></div>
+            <span>VIP</span>
+          </div>
+          <div class="legend-chip">
+            <div class="seat-chair booked mini"><div class="chair-back"></div></div>
+            <span>Booked</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket Stub Checkout Box -->
+      <div class="checkout-ticket-stub">
+        <div class="stub-header">
+          <span class="stub-badge">VIP ADMISSION</span>
+          <h3>Booking Summary</h3>
+        </div>
+
+        <div class="stub-movie-details">
+          <h4>{{ show.movieTitle }}</h4>
+          <p class="theatre-line">{{ show.theatreName }}</p>
+          <p class="screen-line">{{ show.screenName }}</p>
+          <div class="stub-datetime">
+            <span>📅 {{ show.startTime | date:'dd MMM yyyy' }}</span>
+            <span>⏰ {{ show.startTime | date:'h:mm a' }}</span>
+          </div>
+        </div>
+
+        <div class="perforated-divider">
+          <div class="circle-notch left"></div>
+          <div class="dashed-line"></div>
+          <div class="circle-notch right"></div>
+        </div>
+
+        <div class="stub-selection-info">
+          <div class="summary-row">
+            <span class="row-label">Selected Seats:</span>
+            <span class="row-value seats-highlight" *ngIf="selectedSeatIds.length > 0">
+              {{ getSelectedLabels() }} ({{ selectedSeatIds.length }})
+            </span>
+            <span class="row-value muted" *ngIf="selectedSeatIds.length === 0">
+              Tap seats on map
+            </span>
+          </div>
+
+          <div class="summary-row">
+            <span class="row-label">Ticket Rate:</span>
+            <span class="row-value">₹{{ show.ticketPrice }} × {{ selectedSeatIds.length }}</span>
+          </div>
+
+          <div class="summary-row total-row">
+            <span class="total-label">Total Payable:</span>
+            <span class="total-value">₹{{ totalAmount }}</span>
+          </div>
+        </div>
+
+        <form [formGroup]="form" (ngSubmit)="submit()" class="stub-form">
+          <div class="input-container">
+            <label>Contact Phone Number *</label>
+            <input
+              type="tel"
+              formControlName="customerPhone"
+              placeholder="+91 9876543210"
+              class="cinema-input"
+              [class.has-error]="form.get('customerPhone')?.invalid && form.get('customerPhone')?.touched"
+            />
+            <span class="input-error-msg" *ngIf="form.get('customerPhone')?.invalid && form.get('customerPhone')?.touched">
+              Valid phone number required (7-15 digits).
+            </span>
+          </div>
+
+          <div class="cinema-alert error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+          <button
+            type="submit"
+            class="btn btn-glow-primary btn-block btn-checkout"
+            [disabled]="loading || selectedSeatIds.length === 0 || form.invalid">
+            <span *ngIf="!loading">Confirm & Book Tickets (₹{{ totalAmount }})</span>
+            <span *ngIf="loading">Securing Seats...</span>
+          </button>
+        </form>
+
+        <div class="stub-barcode">
+          <div class="barcode-lines"></div>
+          <span class="barcode-text">CINEPASS SECURE BOOKING</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!show" class="cinema-loader">
+  <div class="spinner-ring"></div>
+  <p>Loading auditorium configuration...</p>
+</div>

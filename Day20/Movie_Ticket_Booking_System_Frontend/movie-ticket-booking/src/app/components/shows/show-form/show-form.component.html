@@ -1,0 +1,143 @@
+<div class="cinema-page">
+  <div class="section-container" style="max-width: 1050px;">
+    <div class="admin-form-header">
+      <div class="header-breadcrumb">
+        <a routerLink="/shows" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Shows
+        </a>
+        <h1 class="admin-title">
+          <span class="admin-tag-pill">SCHEDULE SHOW</span>
+          {{ isEdit ? 'Modify Scheduled Show' : 'Schedule New Screening' }}
+        </h1>
+        <p class="admin-subtitle">Assign a movie to a theatre auditorium and set showtimes & ticket rates.</p>
+      </div>
+    </div>
+
+    <div class="admin-split-layout">
+      <!-- Form Left -->
+      <div class="admin-glass-panel">
+        <form [formGroup]="form" (ngSubmit)="submit()" class="admin-form">
+          <div class="form-group-custom">
+            <label>Select Movie *</label>
+            <select formControlName="movieId" class="custom-cinema-input custom-select">
+              <option value="">-- Choose Feature Movie --</option>
+              <option *ngFor="let m of movies" [value]="m.movieId">
+                {{ m.title }} ({{ m.language }} • {{ m.durationMinutes }}m)
+              </option>
+            </select>
+          </div>
+
+          <div class="form-group-custom">
+            <label>Auditorium Screen *</label>
+            <select formControlName="screenId" class="custom-cinema-input custom-select">
+              <option value="">-- Choose Theatre Screen --</option>
+              <option *ngFor="let s of screens" [value]="s.screenId">
+                {{ s.theatreName }} → {{ s.screenName }}
+              </option>
+            </select>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group-custom">
+              <label>Show Start Time *</label>
+              <input
+                type="datetime-local"
+                formControlName="startTime"
+                class="custom-cinema-input cinema-date-input"
+              />
+            </div>
+
+            <div class="form-group-custom">
+              <label>Show End Time *</label>
+              <input
+                type="datetime-local"
+                formControlName="endTime"
+                class="custom-cinema-input cinema-date-input"
+              />
+            </div>
+          </div>
+
+          <div class="form-group-custom">
+            <label>Ticket Price (₹ INR) *</label>
+            <div class="input-with-prefix">
+              <span class="input-prefix">₹</span>
+              <input
+                type="number"
+                formControlName="ticketPrice"
+                min="0"
+                step="0.01"
+                placeholder="250.00"
+                class="custom-cinema-input"
+              />
+            </div>
+          </div>
+
+          <div class="cinema-alert error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+          <div class="admin-form-actions">
+            <button
+              type="submit"
+              class="btn btn-glow-primary btn-lg"
+              [disabled]="loading || form.invalid"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>{{ loading ? 'Saving...' : (isEdit ? 'Update Show' : 'Publish Show Schedule') }}</span>
+            </button>
+            <a routerLink="/shows" class="btn btn-ghost btn-lg">Cancel</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Preview Right -->
+      <div class="preview-panel">
+        <div class="preview-label">LIVE SHOWTIME PASS PREVIEW</div>
+
+        <div class="show-ticket-card" style="box-shadow: 0 15px 35px rgba(0,0,0,0.7);">
+          <div class="ticket-top">
+            <div class="ticket-movie-title">Feature Screening</div>
+            <div class="ticket-price-pill">₹{{ form.get('ticketPrice')?.value || '0' }}</div>
+          </div>
+
+          <div class="ticket-body">
+            <div class="venue-info">
+              <span class="theatre-name">🏢 Selected Venue</span>
+              <span class="screen-pill">Auditorium</span>
+            </div>
+
+            <div class="time-block">
+              <div class="time-item">
+                <span class="time-label">STARTS</span>
+                <span class="time-val">{{ form.get('startTime')?.value ? (form.get('startTime')?.value | date:'h:mm a') : '--:--' }}</span>
+              </div>
+              <div class="time-arrow">➔</div>
+              <div class="time-item">
+                <span class="time-label">ENDS</span>
+                <span class="time-val">{{ form.get('endTime')?.value ? (form.get('endTime')?.value | date:'h:mm a') : '--:--' }}</span>
+              </div>
+            </div>
+
+            <div class="ticket-seat-meta">
+              <span>💺 High-Fidelity Projection</span>
+              <span class="format-tag">Dolby 7.1</span>
+            </div>
+          </div>
+
+          <div class="ticket-footer">
+            <span class="btn btn-glow-primary btn-block preview-btn-disabled">Select Seats & Book</span>
+          </div>
+        </div>
+
+        <div class="preview-helper-box">
+          <span class="helper-bulb">💡</span>
+          <p>Seats are automatically allocated from the screen inventory upon scheduling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

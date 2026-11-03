@@ -1,0 +1,102 @@
+<div class="cinema-page">
+  <div class="section-container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-heading">{{ isAdmin ? 'All Customer Bookings' : 'My Movie Tickets' }}</h2>
+        <p class="section-subheading">{{ isAdmin ? 'Overview of all tickets booked across all screens' : 'Your upcoming show admissions and digital boarding passes' }}</p>
+      </div>
+      <div class="section-actions">
+        <a routerLink="/movies" class="btn btn-hero-secondary">
+          <span>🎬</span> Explore Movies
+        </a>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="cinema-loader">
+      <div class="spinner-ring"></div>
+      <p>Retrieving your confirmed bookings...</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="cinema-alert error">{{ errorMessage }}</div>
+
+    <div *ngIf="!loading">
+      <div *ngIf="bookings.length > 0" class="tickets-grid">
+        <div *ngFor="let booking of bookings" class="digital-ticket-card">
+          <!-- Left Ticket Part -->
+          <div class="ticket-main-section">
+            <div class="ticket-header-strip">
+              <div class="ticket-brand">
+                <span class="ticket-reel-icon">🎟️</span>
+                <span class="ticket-ref-title">REF: {{ booking.bookingReference }}</span>
+              </div>
+              <span class="ticket-status-pill" [class.confirmed]="booking.status === 'Confirmed'" [class.cancelled]="booking.status === 'Cancelled'">
+                {{ booking.status }}
+              </span>
+            </div>
+
+            <div class="ticket-content-grid">
+              <div class="ticket-cell">
+                <label>CUSTOMER</label>
+                <div class="cell-val bold">{{ booking.customerName }}</div>
+              </div>
+              <div class="ticket-cell">
+                <label>SHOW ID</label>
+                <div class="cell-val">#{{ booking.showId }}</div>
+              </div>
+              <div class="ticket-cell">
+                <label>DATE & TIME</label>
+                <div class="cell-val">{{ booking.bookingDate | date:'mediumDate' }}</div>
+              </div>
+              <div class="ticket-cell">
+                <label>TOTAL PAID</label>
+                <div class="cell-val price-highlight">₹{{ booking.totalAmount }}</div>
+              </div>
+            </div>
+
+            <div class="ticket-seats-tray">
+              <label>SEATS RESERVED:</label>
+              <div class="seat-chips-wrap">
+                <span *ngFor="let seat of booking.seats" class="seat-glow-chip">{{ seat }}</span>
+              </div>
+            </div>
+
+            <div class="ticket-bottom-bar">
+              <a [routerLink]="['/bookings', booking.bookingId]" class="btn btn-sm btn-glow-primary">
+                View Digital Pass
+              </a>
+              <button
+                *ngIf="booking.status === 'Confirmed'"
+                class="btn btn-sm btn-glass-danger"
+                (click)="cancel(booking.bookingId)">
+                Cancel Ticket
+              </button>
+            </div>
+          </div>
+
+          <!-- Perforated Tear Stub -->
+          <div class="ticket-tear-section">
+            <div class="stub-notch-top"></div>
+            <div class="tear-content">
+              <div class="stub-qr-box">
+                <div class="qr-placeholder">
+                  <span>📱</span>
+                  <small>SCAN</small>
+                </div>
+              </div>
+              <span class="stub-ref-vertical">{{ booking.bookingReference }}</span>
+            </div>
+            <div class="stub-notch-bottom"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Empty State -->
+      <div *ngIf="bookings.length === 0" class="empty-cinema-state">
+        <div class="empty-icon">🎟️</div>
+        <h3>No Bookings Found</h3>
+        <p>You don't have any booked movie tickets yet. Pick a blockbuster movie and reserve your favorite seats now!</p>
+        <a routerLink="/movies" class="btn btn-glow-primary">Browse Now Showing</a>
+      </div>
+    </div>
+  </div>
+</div>

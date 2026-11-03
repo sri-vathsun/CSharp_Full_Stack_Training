@@ -1,0 +1,70 @@
+<div class="cinema-page">
+  <div class="section-container" style="max-width: 680px;">
+    <div class="admin-form-header">
+      <div class="header-breadcrumb">
+        <a routerLink="/admin/screens" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Screens
+        </a>
+        <h1 class="admin-title">
+          <span class="admin-tag-pill">AUDITORIUM CONFIG</span>
+          {{ isEdit ? 'Edit Screen Auditorium' : 'Add New Screen' }}
+        </h1>
+        <p class="admin-subtitle">Add a screen to a cinema complex so shows and seats can be assigned.</p>
+      </div>
+    </div>
+
+    <div class="admin-glass-panel">
+      <form [formGroup]="form" (ngSubmit)="submit()" class="admin-form">
+        <div class="form-group-custom">
+          <label>Assign to Theatre *</label>
+          <select formControlName="theatreId" class="custom-cinema-input custom-select">
+            <option value="">-- Select Theatre Complex --</option>
+            <option *ngFor="let t of theatres" [value]="t.theatreId">
+              🏢 {{ t.name }} ({{ t.location }})
+            </option>
+          </select>
+          <span class="field-error-hint" *ngIf="form.get('theatreId')?.invalid && form.get('theatreId')?.touched">
+            Theatre selection is required.
+          </span>
+        </div>
+
+        <div class="form-group-custom">
+          <label>Screen Name / Auditorium Title *</label>
+          <div class="input-with-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="field-icon">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <input
+              type="text"
+              formControlName="screenName"
+              placeholder="e.g. Audi 1 (IMAX with Laser), Screen 2 (Dolby Atmos)"
+              class="custom-cinema-input"
+              [class.input-error]="form.get('screenName')?.invalid && form.get('screenName')?.touched"
+            />
+          </div>
+          <span class="field-error-hint" *ngIf="form.get('screenName')?.invalid && form.get('screenName')?.touched">
+            Screen name is required (max 50 chars).
+          </span>
+        </div>
+
+        <div class="cinema-alert error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+        <div class="admin-form-actions">
+          <button type="submit" class="btn btn-glow-primary btn-lg" [disabled]="loading || form.invalid">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>{{ loading ? 'Saving...' : (isEdit ? 'Update Screen' : 'Save Screen') }}</span>
+          </button>
+          <a routerLink="/admin/screens" class="btn btn-ghost btn-lg">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,165 @@
+<div class="cinema-page">
+  <div class="section-container" style="max-width: 1050px;">
+    <!-- Top Bar -->
+    <div class="admin-form-header">
+      <div class="header-breadcrumb">
+        <a routerLink="/movies" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Movies
+        </a>
+        <h1 class="admin-title">
+          <span class="admin-tag-pill">STUDIO ADMIN</span>
+          {{ isEdit ? 'Edit Movie Details' : 'Add New Cinematic Release' }}
+        </h1>
+        <p class="admin-subtitle">Fill in the movie details below to publish to the booking catalogue.</p>
+      </div>
+    </div>
+
+    <!-- Layout: Form + Live Preview Card -->
+    <div class="admin-split-layout">
+      <!-- Left: Form -->
+      <div class="admin-glass-panel">
+        <form [formGroup]="form" (ngSubmit)="submit()" class="admin-form">
+          <div class="form-group-custom">
+            <label>Movie Title *</label>
+            <input
+              type="text"
+              formControlName="title"
+              placeholder="e.g. Interstellar, Oppenheimer"
+              class="custom-cinema-input"
+              [class.input-error]="form.get('title')?.invalid && form.get('title')?.touched"
+            />
+            <span class="field-error-hint" *ngIf="form.get('title')?.invalid && form.get('title')?.touched">
+              Title is required (up to 150 characters).
+            </span>
+          </div>
+
+          <div class="form-group-custom">
+            <label>Synopsis / Description</label>
+            <textarea
+              formControlName="description"
+              rows="3"
+              placeholder="Brief summary of the movie plot, cast, and highlights..."
+              class="custom-cinema-input custom-textarea"
+            ></textarea>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group-custom">
+              <label>Genre *</label>
+              <input
+                type="text"
+                formControlName="genre"
+                placeholder="e.g. Sci-Fi, Action, Thriller"
+                class="custom-cinema-input"
+                [class.input-error]="form.get('genre')?.invalid && form.get('genre')?.touched"
+              />
+              <span class="field-error-hint" *ngIf="form.get('genre')?.invalid && form.get('genre')?.touched">
+                Genre is required.
+              </span>
+            </div>
+
+            <div class="form-group-custom">
+              <label>Language *</label>
+              <input
+                type="text"
+                formControlName="language"
+                placeholder="e.g. English, Tamil, Hindi"
+                class="custom-cinema-input"
+                [class.input-error]="form.get('language')?.invalid && form.get('language')?.touched"
+              />
+              <span class="field-error-hint" *ngIf="form.get('language')?.invalid && form.get('language')?.touched">
+                Language is required.
+              </span>
+            </div>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-group-custom">
+              <label>Duration (Minutes) *</label>
+              <div class="input-with-suffix">
+                <input
+                  type="number"
+                  formControlName="durationMinutes"
+                  min="1"
+                  max="1000"
+                  class="custom-cinema-input"
+                />
+                <span class="input-suffix">mins</span>
+              </div>
+            </div>
+
+            <div class="form-group-custom">
+              <label>Release Date *</label>
+              <input
+                type="date"
+                formControlName="releaseDate"
+                class="custom-cinema-input cinema-date-input"
+                [class.input-error]="form.get('releaseDate')?.invalid && form.get('releaseDate')?.touched"
+              />
+              <span class="field-error-hint" *ngIf="form.get('releaseDate')?.invalid && form.get('releaseDate')?.touched">
+                Release date is required.
+              </span>
+            </div>
+          </div>
+
+          <div class="cinema-alert error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+          <div class="admin-form-actions">
+            <button
+              type="submit"
+              class="btn btn-glow-primary btn-lg"
+              [disabled]="loading || form.invalid"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>{{ loading ? 'Saving Release...' : (isEdit ? 'Update Movie' : 'Publish Movie') }}</span>
+            </button>
+            <a routerLink="/movies" class="btn btn-ghost btn-lg">Cancel</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Right: Real-time Live Poster Preview -->
+      <div class="preview-panel">
+        <div class="preview-label">LIVE CATALOGUE PREVIEW</div>
+        
+        <div class="poster-card preview-card-box">
+          <div class="poster-artwork">
+            <div class="poster-gradient-art">
+              <div class="poster-film-icon">🎬</div>
+              <div class="poster-genre-overlay">{{ form.get('genre')?.value || 'GENRE' }}</div>
+            </div>
+            <div class="poster-badge-top">
+              <span class="lang-tag">{{ form.get('language')?.value || 'Language' }}</span>
+              <span class="duration-tag">⏱ {{ form.get('durationMinutes')?.value || 90 }}m</span>
+            </div>
+          </div>
+
+          <div class="poster-info">
+            <h3 class="poster-title">{{ form.get('title')?.value || 'Untitled Movie' }}</h3>
+            <p class="poster-description">{{ form.get('description')?.value || 'Your movie synopsis and storyline will appear here when published.' }}</p>
+            <div class="poster-date">
+              <span>📅 Releases: {{ form.get('releaseDate')?.value || 'YYYY-MM-DD' }}</span>
+            </div>
+
+            <div class="poster-footer-actions">
+              <span class="btn btn-card-book preview-btn-disabled">
+                <span>Book Show</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-helper-box">
+          <span class="helper-bulb">💡</span>
+          <p>This is how customers will see this title on the homepage and mobile screens once published.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

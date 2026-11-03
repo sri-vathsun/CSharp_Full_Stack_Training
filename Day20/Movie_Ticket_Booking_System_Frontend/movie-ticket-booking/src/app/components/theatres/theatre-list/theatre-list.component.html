@@ -1,0 +1,64 @@
+<div class="cinema-page">
+  <div class="section-container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-heading">🎭 Cinema Theatres</h2>
+        <p class="section-subheading">Manage your theater complexes, venues, and physical screening locations</p>
+      </div>
+      <div class="section-actions">
+        <a routerLink="/admin/theatres/new" class="btn btn-glow-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add Theatre
+        </a>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="cinema-loader">
+      <div class="spinner-ring"></div>
+      <p>Loading theatre venues...</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="cinema-alert error">{{ errorMessage }}</div>
+
+    <div *ngIf="!loading" class="venue-cards-grid">
+      <div *ngFor="let theatre of theatres" class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-icon-circle">🏢</div>
+          <div class="venue-title-wrap">
+            <h3 class="venue-title">{{ theatre.name }}</h3>
+            <p class="venue-location">📍 {{ theatre.location }}</p>
+          </div>
+        </div>
+
+        <div class="venue-card-body">
+          <div class="venue-meta-chip">
+            <span>ID: #{{ theatre.theatreId }}</span>
+            <span class="status-active">Active Venue</span>
+          </div>
+        </div>
+
+        <div class="venue-card-footer">
+          <a [routerLink]="['/admin/screens']" [queryParams]="{theatreId: theatre.theatreId}" class="btn btn-sm btn-card-book">
+            View Screens
+          </a>
+          <a [routerLink]="['/admin/theatres', theatre.theatreId, 'edit']" class="btn-icon edit" title="Edit Theatre">
+            ✏️
+          </a>
+          <button class="btn-icon delete" (click)="delete(theatre.theatreId)" title="Delete Theatre">
+            🗑️
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="theatres.length === 0" class="empty-cinema-state">
+        <div class="empty-icon">🏢</div>
+        <h3>No Theatres Registered</h3>
+        <p>No theatre venues are set up in the database. Add your first cinema complex to get started!</p>
+        <a routerLink="/admin/theatres/new" class="btn btn-glow-primary">+ Add New Theatre</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="cinema-page">
+  <div class="section-container" style="max-width: 680px;">
+    <div class="admin-form-header">
+      <div class="header-breadcrumb">
+        <a routerLink="/admin/theatres" class="back-link">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          Back to Theatres
+        </a>
+        <h1 class="admin-title">
+          <span class="admin-tag-pill">VENUE CONFIG</span>
+          {{ isEdit ? 'Edit Theatre Complex' : 'Add New Cinema Theatre' }}
+        </h1>
+        <p class="admin-subtitle">Register a cinema location for screening blockbuster titles.</p>
+      </div>
+    </div>
+
+    <div class="admin-glass-panel">
+      <form [formGroup]="form" (ngSubmit)="submit()" class="admin-form">
+        <div class="form-group-custom">
+          <label>Theatre Name *</label>
+          <div class="input-with-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="field-icon">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="e.g. PVR INOX Forum Mall"
+              class="custom-cinema-input"
+              [class.input-error]="form.get('name')?.invalid && form.get('name')?.touched"
+            />
+          </div>
+          <span class="field-error-hint" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+            Theatre name is required (max 150 chars).
+          </span>
+        </div>
+
+        <div class="form-group-custom">
+          <label>City & Address Location *</label>
+          <div class="input-with-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="field-icon">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <input
+              type="text"
+              formControlName="location"
+              placeholder="e.g. Phoenix MarketCity, Velachery, Chennai"
+              class="custom-cinema-input"
+              [class.input-error]="form.get('location')?.invalid && form.get('location')?.touched"
+            />
+          </div>
+          <span class="field-error-hint" *ngIf="form.get('location')?.invalid && form.get('location')?.touched">
+            Location is required (max 250 chars).
+          </span>
+        </div>
+
+        <div class="cinema-alert error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+        <div class="admin-form-actions">
+          <button type="submit" class="btn btn-glow-primary btn-lg" [disabled]="loading || form.invalid">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>{{ loading ? 'Saving...' : (isEdit ? 'Update Theatre' : 'Save Theatre') }}</span>
+          </button>
+          <a routerLink="/admin/theatres" class="btn btn-ghost btn-lg">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

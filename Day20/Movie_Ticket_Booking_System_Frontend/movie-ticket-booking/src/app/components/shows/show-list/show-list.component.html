@@ -1,0 +1,100 @@
+<div class="cinema-page">
+  <div class="section-container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-heading">Showtimes & Experiences</h2>
+        <p class="section-subheading">Select your theatre, preferred time slot, and screen experience</p>
+      </div>
+
+      <div class="section-actions" *ngIf="isAdmin">
+        <a routerLink="/admin/shows/new" class="btn btn-glow-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Schedule Show
+        </a>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="filter-strip">
+      <div class="filter-group">
+        <label>Filter by Movie:</label>
+        <select [(ngModel)]="filterMovieId" class="cinema-select" (change)="load()">
+          <option [ngValue]="null">All Available Movies</option>
+          <option *ngFor="let m of movies" [ngValue]="m.movieId">{{ m.title }}</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Filter by Theatre:</label>
+        <select [(ngModel)]="filterTheatreId" class="cinema-select" (change)="load()">
+          <option [ngValue]="null">All Cinema Locations</option>
+          <option *ngFor="let t of theatres" [ngValue]="t.theatreId">{{ t.name }} - {{ t.location }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="cinema-loader">
+      <div class="spinner-ring"></div>
+      <p>Retrieving showtimes and auditorium schedules...</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="cinema-alert error">{{ errorMessage }}</div>
+
+    <div *ngIf="!loading" class="shows-grid">
+      <div *ngFor="let show of shows" class="show-ticket-card">
+        <div class="ticket-top">
+          <div class="ticket-movie-title">{{ show.movieTitle }}</div>
+          <div class="ticket-price-pill">₹{{ show.ticketPrice }}</div>
+        </div>
+
+        <div class="ticket-body">
+          <div class="venue-info">
+            <span class="theatre-name">🏢 {{ show.theatreName }}</span>
+            <span class="screen-pill">{{ show.screenName }}</span>
+          </div>
+
+          <div class="time-block">
+            <div class="time-item">
+              <span class="time-label">STARTS</span>
+              <span class="time-val">{{ show.startTime | date:'h:mm a' }}</span>
+              <span class="date-val">{{ show.startTime | date:'EEE, MMM d' }}</span>
+            </div>
+            <div class="time-arrow">➔</div>
+            <div class="time-item">
+              <span class="time-label">ENDS</span>
+              <span class="time-val">{{ show.endTime | date:'h:mm a' }}</span>
+              <span class="date-val">{{ show.endTime | date:'EEE, MMM d' }}</span>
+            </div>
+          </div>
+
+          <div class="ticket-seat-meta">
+            <span>💺 {{ show.totalSeats }} Seats Available</span>
+            <span class="format-tag">Dolby 7.1</span>
+          </div>
+        </div>
+
+        <div class="ticket-footer">
+          <a [routerLink]="['/shows', show.showId, 'book']" class="btn btn-glow-primary btn-block">
+            Select Seats & Book
+          </a>
+
+          <ng-container *ngIf="isAdmin">
+            <div class="admin-show-btns">
+              <a [routerLink]="['/admin/shows', show.showId, 'edit']" class="btn btn-sm btn-ghost">Edit</a>
+              <button class="btn btn-sm btn-glass-danger" (click)="delete(show.showId)">Delete</button>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div *ngIf="shows.length === 0" class="empty-cinema-state">
+        <div class="empty-icon">🎟️</div>
+        <h3>No Shows Scheduled</h3>
+        <p>No showtimes match the selected movie or theatre. Please choose another location or movie!</p>
+      </div>
+    </div>
+  </div>
+</div>

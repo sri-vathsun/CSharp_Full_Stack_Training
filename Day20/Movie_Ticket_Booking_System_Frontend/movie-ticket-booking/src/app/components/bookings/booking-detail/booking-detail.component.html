@@ -1,0 +1,112 @@
+<div class="cinema-page" *ngIf="booking">
+  <div class="section-container" style="max-width: 800px;">
+    <div class="pass-top-actions">
+      <a routerLink="/bookings" class="back-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Bookings
+      </a>
+
+      <button class="btn btn-sm btn-hero-secondary" onclick="window.print()">
+        🖨️ Print Ticket
+      </button>
+    </div>
+
+    <!-- Master Ticket Pass -->
+    <div class="master-ticket-pass">
+      <div class="pass-header">
+        <div class="pass-brand">
+          <span class="pass-icon">🎬</span>
+          <div>
+            <div class="pass-title">CINEPASS ADMISSION TICKET</div>
+            <div class="pass-subtitle">Present this ticket at the screen entrance</div>
+          </div>
+        </div>
+
+        <div class="pass-status">
+          <span class="ticket-status-pill" [class.confirmed]="booking.status === 'Confirmed'" [class.cancelled]="booking.status === 'Cancelled'">
+            {{ booking.status }}
+          </span>
+        </div>
+      </div>
+
+      <div class="pass-hero-strip">
+        <div class="strip-left">
+          <span class="strip-label">BOOKING REFERENCE</span>
+          <h2 class="strip-code">{{ booking.bookingReference }}</h2>
+        </div>
+        <div class="strip-right">
+          <span class="strip-label">TOTAL AMOUNT PAID</span>
+          <h2 class="strip-price">₹{{ booking.totalAmount }}</h2>
+        </div>
+      </div>
+
+      <div class="pass-details-grid">
+        <div class="detail-cell">
+          <label>ATTENDEE NAME</label>
+          <p>{{ booking.customerName }}</p>
+        </div>
+        <div class="detail-cell">
+          <label>EMAIL ADDRESS</label>
+          <p>{{ booking.customerEmail }}</p>
+        </div>
+        <div class="detail-cell">
+          <label>PHONE</label>
+          <p>{{ booking.customerPhone }}</p>
+        </div>
+        <div class="detail-cell">
+          <label>BOOKING TIMESTAMP</label>
+          <p>{{ booking.bookingDate | date:'medium' }}</p>
+        </div>
+        <div class="detail-cell">
+          <label>SHOW IDENTIFIER</label>
+          <p>Show #{{ booking.showId }}</p>
+        </div>
+        <div class="detail-cell">
+          <label>SEATS ASSIGNED</label>
+          <div class="seat-chips-wrap">
+            <span *ngFor="let s of booking.seats" class="seat-glow-chip">{{ s }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pass-perforation">
+        <div class="circle-notch left"></div>
+        <div class="dashed-line"></div>
+        <div class="circle-notch right"></div>
+      </div>
+
+      <div class="pass-footer">
+        <div class="pass-qr-section">
+          <div class="qr-box">
+            <span style="font-size: 2.5rem;">🎟️</span>
+          </div>
+          <div class="qr-instructions">
+            <strong>Fast-Track Gate Scan</strong>
+            <p>Scan barcode directly from your phone screen or printed pass at the auditorium entry gate.</p>
+          </div>
+        </div>
+
+        <div class="pass-actions" *ngIf="booking.status === 'Confirmed'">
+          <button class="btn btn-glass-danger" (click)="cancelBooking()" [disabled]="cancelling">
+            {{ cancelling ? 'Cancelling Ticket...' : 'Cancel This Booking' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!booking && !errorMessage" class="cinema-loader">
+  <div class="spinner-ring"></div>
+  <p>Loading digital ticket pass...</p>
+</div>
+
+<div *ngIf="errorMessage" class="cinema-page">
+  <div class="section-container">
+    <div class="cinema-alert error">{{ errorMessage }}</div>
+    <a routerLink="/bookings" class="btn btn-ghost">← Return to Bookings</a>
+  </div>
+</div>

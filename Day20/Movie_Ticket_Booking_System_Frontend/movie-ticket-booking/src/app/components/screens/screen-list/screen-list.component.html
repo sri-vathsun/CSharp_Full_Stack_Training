@@ -1,0 +1,64 @@
+<div class="cinema-page">
+  <div class="section-container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-heading">🖥️ Auditorium Screens</h2>
+        <p class="section-subheading">Manage screening halls, IMAX theatres, and seating configurations</p>
+      </div>
+      <div class="section-actions">
+        <a routerLink="/admin/screens/new" class="btn btn-glow-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Add Screen
+        </a>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="cinema-loader">
+      <div class="spinner-ring"></div>
+      <p>Loading auditorium screens...</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="cinema-alert error">{{ errorMessage }}</div>
+
+    <div *ngIf="!loading" class="venue-cards-grid">
+      <div *ngFor="let screen of screens" class="venue-card">
+        <div class="venue-card-header">
+          <div class="venue-icon-circle screen-icon">🎬</div>
+          <div class="venue-title-wrap">
+            <h3 class="venue-title">{{ screen.screenName }}</h3>
+            <p class="venue-location">🏢 {{ screen.theatreName }}</p>
+          </div>
+        </div>
+
+        <div class="venue-card-body">
+          <div class="venue-meta-chip">
+            <span>Screen ID: #{{ screen.screenId }}</span>
+            <span class="format-tag">4K Laser Atmos</span>
+          </div>
+        </div>
+
+        <div class="venue-card-footer">
+          <a [routerLink]="['/admin/seats']" [queryParams]="{screenId: screen.screenId}" class="btn btn-sm btn-glow-primary">
+            💺 Configure Seats
+          </a>
+          <a [routerLink]="['/admin/screens', screen.screenId, 'edit']" class="btn-icon edit" title="Edit Screen">
+            ✏️
+          </a>
+          <button class="btn-icon delete" (click)="delete(screen.screenId)" title="Delete Screen">
+            🗑️
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="screens.length === 0" class="empty-cinema-state">
+        <div class="empty-icon">🖥️</div>
+        <h3>No Screens Found</h3>
+        <p>No screening halls are configured yet. Add your first auditorium screen!</p>
+        <a routerLink="/admin/screens/new" class="btn btn-glow-primary">+ Add New Screen</a>
+      </div>
+    </div>
+  </div>
+</div>
