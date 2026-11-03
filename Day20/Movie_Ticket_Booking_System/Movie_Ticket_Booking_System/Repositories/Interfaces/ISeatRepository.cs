@@ -1,6 +1,27 @@
-﻿namespace Movie_Ticket_Booking_System.Repositories.Interfaces
+﻿
+using MovieTicketBooking.Models;
+
+namespace MovieTicketBooking.Repositories.Interfaces;
+
+public interface ISeatRepository
 {
-    public class ISeatRepository
-    {
-    }
+    Task<List<Seat>> GetByScreenIdAsync(int screenId);
+
+    Task<Seat?> GetByIdAsync(int id);
+
+    Task<bool> ScreenExistsAsync(int screenId);
+
+    Task<bool> SeatPositionExistsAsync(
+        int screenId,
+        string rowName,
+        int seatNumber,
+        int? excludeSeatId = null);
+
+    Task AddAsync(Seat seat);
+
+    Task AddRangeAsync(List<Seat> seats);
+
+    Task UpdateAsync(Seat seat);
+
+    Task DeleteAsync(Seat seat);
 }

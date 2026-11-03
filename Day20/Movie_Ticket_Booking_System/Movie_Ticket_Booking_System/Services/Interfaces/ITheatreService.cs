@@ -1,6 +1,18 @@
-﻿namespace Movie_Ticket_Booking_System.Services.Interfaces
+﻿using MovieTicketBooking.DTOs.Theatres;
+
+namespace MovieTicketBooking.Services.Interfaces;
+
+public interface ITheatreService
 {
-    public class ITheatreService
-    {
-    }
+    Task<TheatreResponse> CreateTheatreAsync(CreateTheatreRequest request);
+
+    Task<List<TheatreResponse>> GetAllTheatresAsync();
+
+    Task<TheatreResponse?> GetTheatreByIdAsync(int id);
+
+    Task<TheatreResponse?> UpdateTheatreAsync(
+        int id,
+        UpdateTheatreRequest request);
+
+    Task<bool> DeleteTheatreAsync(int id);
 }

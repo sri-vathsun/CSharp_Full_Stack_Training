@@ -1,6 +1,14 @@
-﻿namespace Movie_Ticket_Booking_System.DTOs.Theatres
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MovieTicketBooking.DTOs.Theatres;
+
+public class CreateTheatreRequest
 {
-    public class CreateTheatreRequest
-    {
-    }
+    [Required]
+    [MaxLength(150)]
+    public string Name { get; set; } = string.Empty;
+
+    [Required]
+    [MaxLength(250)]
+    public string Location { get; set; } = string.Empty;
 }

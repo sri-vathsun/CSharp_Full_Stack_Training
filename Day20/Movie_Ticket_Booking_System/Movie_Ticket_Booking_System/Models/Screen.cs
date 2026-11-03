@@ -15,4 +15,6 @@ public class Screen
 
     // Navigation property
     public Theatre Theatre { get; set; } = null!;
+
+    public ICollection<Seat> Seats { get; set; } = new List<Seat>();
 }

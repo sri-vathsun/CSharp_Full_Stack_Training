@@ -1,0 +1,34 @@
+﻿
+using MovieTicketBooking.DTOs.Shows;
+
+namespace MovieTicketBooking.Services.Interfaces;
+
+public interface IShowService
+{
+    Task<ShowResponse> CreateAsync(CreateShowRequest request);
+
+    Task<List<ShowResponse>> GetAllAsync(
+        DateTime? date,
+        int? movieId,
+        int? theatreId);
+
+    Task<ShowResponse?> GetByIdAsync(int id);
+
+    Task<List<ShowResponse>> GetByMovieIdAsync(int movieId);
+
+    Task<List<ShowResponse>> GetByTheatreIdAsync(int theatreId);
+
+    Task<List<ShowResponse>> GetByDateAsync(DateTime date);
+
+    Task<ShowResponse?> UpdateAsync(
+        int id,
+        UpdateShowRequest request);
+
+    Task<bool> DeleteAsync(int id);
+
+    Task<List<ShowSeatResponse>?> GetShowSeatsAsync(int showId);
+
+    Task<List<ShowSeatResponse>?> GetAvailableSeatsAsync(int showId);
+
+    Task<List<ShowSeatResponse>?> GetBookedSeatsAsync(int showId);
+}
