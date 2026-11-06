@@ -1,0 +1,6 @@
+@Campus_Plcement_Management_Web_Api_HostAddress = http://localhost:5118
+
+GET {{Campus_Plcement_Management_Web_Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
