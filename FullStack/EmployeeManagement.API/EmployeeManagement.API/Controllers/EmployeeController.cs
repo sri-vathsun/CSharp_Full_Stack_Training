@@ -36,22 +36,45 @@ namespace EmployeeManagement.API.Controllers
             return Ok(employees);
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id}")]
         public async Task<IActionResult> GetEmployeeById(int id)
         {
             var employee = await _service.GetEmployeeById(id);
 
-            return employee is null ? NotFound() : Ok(employee);
+            if (employee == null)
+            {
+                return NotFound("Employee not found");
+            }
+
+            return Ok(employee);
         }
 
-        [HttpPut("{id:int}")]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEmployee(
             int id,
-            CreateEmployeeDto dto)
+            [FromBody] UpdateEmployeeDto dto)
         {
-            var employee = await _service.UpdateEmployee(id, dto);
+            var updated = await _service.UpdateEmployee(id, dto);
 
-            return employee is null ? NotFound() : Ok(employee);
+            if (!updated)
+            {
+                return NotFound("Employee not found");
+            }
+
+            return Ok(new { message = "Employee updated successfully" });
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            var deleted = await _service.DeleteEmployee(id);
+
+            if (!deleted)
+            {
+                return NotFound("Employee not found");
+            }
+
+            return Ok(new { message = "Employee deleted successfully" });
         }
     }
 }

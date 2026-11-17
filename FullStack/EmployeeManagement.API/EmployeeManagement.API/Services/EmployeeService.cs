@@ -45,19 +45,16 @@ namespace EmployeeManagement.API.Services
         {
             return await _context.Employees
                 .AsNoTracking()
-                .FirstOrDefaultAsync(employee => employee.Id == id);
+                .FirstOrDefaultAsync(e => e.Id == id);
         }
 
-        public async Task<Employee?> UpdateEmployee(
-            int id,
-            CreateEmployeeDto dto)
+        public async Task<bool> UpdateEmployee(int id, UpdateEmployeeDto dto)
         {
-            var employee = await _context.Employees
-                .FirstOrDefaultAsync(employee => employee.Id == id);
+            var employee = await _context.Employees.FindAsync(id);
 
-            if (employee is null)
+            if (employee == null)
             {
-                return null;
+                return false;
             }
 
             employee.Name = dto.Name;
@@ -69,7 +66,23 @@ namespace EmployeeManagement.API.Services
 
             await _context.SaveChangesAsync();
 
-            return employee;
+            return true;
+        }
+
+        public async Task<bool> DeleteEmployee(int id)
+        {
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee == null)
+            {
+                return false;
+            }
+
+            _context.Employees.Remove(employee);
+
+            await _context.SaveChangesAsync();
+
+            return true;
         }
     }
 }
