@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+
+# Visual Studio
+.vs/
+**/.vs/
+
+# .NET
+**/bin/
+**/obj/
+
+# Angular
+**/node_modules/
+**/dist/
+**/.angular/
+
+# Environment files
+.env
+.env.*
+!.env.example
+=======
+# Visual Studio cache
+**/.vs/
+
+# Build output
+**/bin/
+**/obj/
+>>>>>>> c9626b1c15647726c37a1bd0f99098da68d4f678
