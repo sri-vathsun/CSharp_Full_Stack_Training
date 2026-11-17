@@ -27,5 +27,13 @@ namespace EmployeeManagement.API.Controllers
                 employee
             );
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetEmployees()
+        {
+            var employees = await _service.GetEmployees();
+
+            return Ok(employees);
+        }
     }
 }

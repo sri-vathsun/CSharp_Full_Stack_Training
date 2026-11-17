@@ -1,4 +1,5 @@
-﻿using EmployeeManagement.API.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using EmployeeManagement.API.Data;
 using EmployeeManagement.API.DTOs;
 using EmployeeManagement.API.Models;
 
@@ -31,6 +32,13 @@ namespace EmployeeManagement.API.Services
             await _context.SaveChangesAsync();
 
             return employee;
+        }
+
+        public async Task<List<Employee>> GetEmployees()
+        {
+            return await _context.Employees
+                .AsNoTracking()
+                .ToListAsync();
         }
     }
 }
