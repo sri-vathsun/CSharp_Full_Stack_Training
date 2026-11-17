@@ -40,5 +40,36 @@ namespace EmployeeManagement.API.Services
                 .AsNoTracking()
                 .ToListAsync();
         }
+
+        public async Task<Employee?> GetEmployeeById(int id)
+        {
+            return await _context.Employees
+                .AsNoTracking()
+                .FirstOrDefaultAsync(employee => employee.Id == id);
+        }
+
+        public async Task<Employee?> UpdateEmployee(
+            int id,
+            CreateEmployeeDto dto)
+        {
+            var employee = await _context.Employees
+                .FirstOrDefaultAsync(employee => employee.Id == id);
+
+            if (employee is null)
+            {
+                return null;
+            }
+
+            employee.Name = dto.Name;
+            employee.Email = dto.Email;
+            employee.Phone = dto.Phone;
+            employee.Department = dto.Department;
+            employee.Designation = dto.Designation;
+            employee.Salary = dto.Salary;
+
+            await _context.SaveChangesAsync();
+
+            return employee;
+        }
     }
 }

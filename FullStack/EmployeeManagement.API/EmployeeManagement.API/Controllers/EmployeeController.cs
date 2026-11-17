@@ -35,5 +35,23 @@ namespace EmployeeManagement.API.Controllers
 
             return Ok(employees);
         }
+
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetEmployeeById(int id)
+        {
+            var employee = await _service.GetEmployeeById(id);
+
+            return employee is null ? NotFound() : Ok(employee);
+        }
+
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> UpdateEmployee(
+            int id,
+            CreateEmployeeDto dto)
+        {
+            var employee = await _service.UpdateEmployee(id, dto);
+
+            return employee is null ? NotFound() : Ok(employee);
+        }
     }
 }
