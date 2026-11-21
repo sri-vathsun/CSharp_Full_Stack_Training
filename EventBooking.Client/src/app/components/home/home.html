@@ -1,0 +1,10 @@
+
+<h1>Welcome to Event Booking!</h1>
+
+@if (user) {
+  <h3>Hello, {{ user.fullName }}</h3>
+  <p>Email: {{ user.email }}</p>
+  <p>Role: {{ user.role }}</p>
+}
+
+<button (click)="logout()">Logout</button>
