@@ -1,0 +1,58 @@
+<main class="organizer-page">
+  <section class="organizer-card">
+    <a routerLink="/admin/dashboard" class="back-link">&larr; Back to Dashboard</a>
+
+    <h1>Create Organizer</h1>
+    <p class="subtitle">Add a new event organizer to the platform.</p>
+
+    <form [formGroup]="organizerForm" (ngSubmit)="onSubmit()">
+      <label for="fullName">Full Name</label>
+      <input
+        id="fullName"
+        type="text"
+        formControlName="fullName"
+        placeholder="Enter full name"
+      >
+      @if (organizerForm.controls.fullName.touched &&
+           organizerForm.controls.fullName.invalid) {
+        <small>Full name is required and must be 100 characters or fewer.</small>
+      }
+
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        formControlName="email"
+        placeholder="organizer@example.com"
+      >
+      @if (organizerForm.controls.email.touched &&
+           organizerForm.controls.email.invalid) {
+        <small>Enter a valid email address.</small>
+      }
+
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        formControlName="password"
+        placeholder="Minimum 8 characters"
+      >
+      @if (organizerForm.controls.password.touched &&
+           organizerForm.controls.password.invalid) {
+        <small>Password must contain at least 8 characters.</small>
+      }
+
+      @if (errorMessage) {
+        <p class="message error">{{ errorMessage }}</p>
+      }
+
+      @if (successMessage) {
+        <p class="message success">{{ successMessage }}</p>
+      }
+
+      <button type="submit" [disabled]="isLoading">
+        {{ isLoading ? 'Creating...' : 'Create Organizer' }}
+      </button>
+    </form>
+  </section>
+</main>

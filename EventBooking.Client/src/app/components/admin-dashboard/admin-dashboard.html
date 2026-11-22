@@ -1,0 +1,27 @@
+<main class="dashboard">
+  <header class="dashboard-header">
+    <div>
+      <p class="eyebrow">Administration</p>
+      <h1>Admin Dashboard</h1>
+    </div>
+
+    <button class="logout-button" type="button" (click)="logout()">Logout</button>
+  </header>
+
+  @if (user) {
+    <p class="welcome">Welcome, {{ user.fullName }}</p>
+  }
+
+  <section class="dashboard-grid" aria-label="Admin actions">
+    <article class="dashboard-card">
+      <span class="card-icon" aria-hidden="true">O</span>
+      <div>
+        <h2>Create Organizer</h2>
+        <p>Add a new organizer account for event management.</p>
+      </div>
+      <a routerLink="/admin/create-organizer" class="primary-action">
+        Create Organizer
+      </a>
+    </article>
+  </section>
+</main>
