@@ -41,9 +41,13 @@ export class Login {
 
     this.authService.login(this.loginForm.getRawValue())
       .subscribe({
-        next: () => {
+        next: (response) => {
           this.isLoading = false;
-          this.router.navigate(['/home']);
+          if (response.role === 'Admin') {
+            this.router.navigate(['/admin/dashboard']);
+          } else {
+            this.router.navigate(['/home']);
+          }
         },
         error: (error) => {
           this.isLoading = false;
