@@ -1,0 +1,57 @@
+
+<div class="auth-container">
+  <div class="auth-card">
+
+    <h2>Create Account</h2>
+    <p>Register to start booking events.</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <label>Full Name</label>
+      <input type="text" formControlName="fullName"
+             placeholder="Enter your full name">
+
+      @if (registerForm.controls.fullName.touched &&
+           registerForm.controls.fullName.invalid) {
+        <small>Please enter a name (maximum 100 characters).</small>
+      }
+
+      <label>Email</label>
+      <input type="email" formControlName="email"
+             placeholder="Enter your email">
+
+      @if (registerForm.controls.email.touched &&
+           registerForm.controls.email.invalid) {
+        <small>Enter a valid email address.</small>
+      }
+
+      <label>Password</label>
+      <input type="password" formControlName="password"
+             placeholder="Minimum 8 characters">
+
+      @if (registerForm.controls.password.touched &&
+           registerForm.controls.password.invalid) {
+        <small>Password must contain at least 8 characters.</small>
+      }
+
+      @if (errorMessage) {
+        <p class="error">{{ errorMessage }}</p>
+      }
+
+      @if (successMessage) {
+        <p class="success">{{ successMessage }}</p>
+      }
+
+      <button type="submit" [disabled]="isLoading">
+        {{ isLoading ? 'Registering...' : 'Register' }}
+      </button>
+
+    </form>
+
+    <p>
+      Already have an account?
+      <a routerLink="/login">Login here</a>
+    </p>
+
+  </div>
+</div>

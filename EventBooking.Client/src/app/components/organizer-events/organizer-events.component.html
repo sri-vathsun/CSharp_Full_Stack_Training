@@ -1,0 +1,445 @@
+<div class="event-page">
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div>
+      <p class="eyebrow">ORGANIZER WORKSPACE</p>
+
+      <h1>Event Management</h1>
+
+      <p class="page-description">
+        Create, manage and publish your events from one place.
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="primary-button"
+      (click)="resetForm()">
+      <span class="button-icon">+</span>
+      Create Event
+    </button>
+  </header>
+
+  <!-- Alerts -->
+  <div
+    class="alert alert-success"
+    *ngIf="successMessage">
+    <span>✓</span>
+    {{ successMessage }}
+  </div>
+
+  <div
+    class="alert alert-error"
+    *ngIf="errorMessage">
+    <span>!</span>
+    {{ errorMessage }}
+  </div>
+
+  <!-- Statistics -->
+  <section class="stats-grid">
+
+    <div class="stat-card">
+      <div class="stat-icon purple">▣</div>
+      <div>
+        <p>Total Events</p>
+        <h2>{{ totalEvents }}</h2>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon green">✓</div>
+      <div>
+        <p>Published</p>
+        <h2>{{ publishedEvents }}</h2>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon orange">◷</div>
+      <div>
+        <p>Draft Events</p>
+        <h2>{{ draftEvents }}</h2>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon blue">♧</div>
+      <div>
+        <p>Available Tickets</p>
+        <h2>{{ totalAvailableTickets }}</h2>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Create / Edit Form -->
+  <section class="content-card form-card">
+
+    <div class="section-header">
+      <div>
+        <h2>
+          {{ isEditing ? 'Edit Event' : 'Create New Event' }}
+        </h2>
+
+        <p>
+          {{
+            isEditing
+              ? 'Update your event information.'
+              : 'Enter the details to create a new event.'
+          }}
+        </p>
+      </div>
+
+      <span class="form-step">
+        {{ isEditing ? 'EDIT MODE' : 'NEW EVENT' }}
+      </span>
+    </div>
+
+    <form
+      [formGroup]="eventForm"
+      (ngSubmit)="submitEvent()">
+
+      <div class="form-grid">
+
+        <!-- Title -->
+        <div class="form-group full-width">
+          <label for="title">Event Name</label>
+
+          <input
+            id="title"
+            type="text"
+            formControlName="title"
+            placeholder="e.g. Tech Fest 2027"
+            maxlength="150"
+            [class.invalid]="isInvalid('title')" />
+
+          <small
+            class="field-error"
+            *ngIf="isInvalid('title')">
+            Event name is required and must contain at least 3 characters.
+          </small>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group full-width">
+          <label for="description">Event Description</label>
+
+          <textarea
+            id="description"
+            rows="4"
+            formControlName="description"
+            placeholder="Describe your event, activities and highlights..."
+            maxlength="2000"
+            [class.invalid]="isInvalid('description')">
+          </textarea>
+
+          <small
+            class="field-error"
+            *ngIf="isInvalid('description')">
+            Description is required and must contain at least 10 characters.
+          </small>
+        </div>
+
+        <!-- Venue -->
+        <div class="form-group full-width">
+          <label for="venue">Venue</label>
+
+          <input
+            id="venue"
+            type="text"
+            formControlName="venue"
+            placeholder="Event location"
+            maxlength="250"
+            [class.invalid]="isInvalid('venue')" />
+
+          <small
+            class="field-error"
+            *ngIf="isInvalid('venue')">
+            Venue is required.
+          </small>
+        </div>
+
+        <!-- Start Date -->
+        <div class="form-group">
+          <label for="startDateUtc">Start Date & Time</label>
+
+          <input
+            id="startDateUtc"
+            type="datetime-local"
+            formControlName="startDateUtc"
+            [class.invalid]="isInvalid('startDateUtc')" />
+
+          <small
+            class="field-error"
+            *ngIf="isInvalid('startDateUtc')">
+            Start date is required.
+          </small>
+        </div>
+
+        <!-- End Date -->
+        <div class="form-group">
+          <label for="endDateUtc">End Date & Time</label>
+
+          <input
+            id="endDateUtc"
+            type="datetime-local"
+            formControlName="endDateUtc"
+            [class.invalid]="isInvalid('endDateUtc')" />
+
+          <small
+            class="field-error"
+            *ngIf="isInvalid('endDateUtc')">
+            End date is required.
+          </small>
+        </div>
+
+        <!-- Ticket Price -->
+        <div class="form-group">
+          <label for="ticketPrice">Ticket Price (₹)</label>
+
+          <div class="input-prefix">
+            <span>₹</span>
+
+            <input
+              id="ticketPrice"
+              type="number"
+              min="0"
+              formControlName="ticketPrice"
+              placeholder="250"
+              [class.invalid]="isInvalid('ticketPrice')" />
+          </div>
+
+          <small
+            class="field-error"
+            *ngIf="isInvalid('ticketPrice')">
+            Ticket price must be zero or more.
+          </small>
+        </div>
+
+        <!-- Capacity -->
+        <div class="form-group">
+          <label for="totalTickets">Total Ticket Capacity</label>
+
+          <input
+            id="totalTickets"
+            type="number"
+            min="1"
+            formControlName="totalTickets"
+            placeholder="500"
+            [class.invalid]="isInvalid('totalTickets')" />
+
+          <small
+            class="field-error"
+            *ngIf="isInvalid('totalTickets')">
+            At least one ticket is required.
+          </small>
+        </div>
+
+      </div>
+
+      <!-- Form Actions -->
+      <div class="form-actions">
+
+        <button
+          type="button"
+          class="secondary-button"
+          (click)="resetForm()">
+          Clear
+        </button>
+
+        <button
+          type="submit"
+          class="primary-button"
+          [disabled]="isSaving">
+
+          <span *ngIf="!isSaving">
+            {{ isEditing ? 'Save Changes' : 'Create Event' }}
+          </span>
+
+          <span *ngIf="isSaving">
+            Saving...
+          </span>
+        </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+  <!-- Events List -->
+  <section class="content-card events-card">
+
+    <div class="section-header">
+      <div>
+        <h2>My Events</h2>
+        <p>Manage the events you have created.</p>
+      </div>
+
+      <button
+        type="button"
+        class="secondary-button refresh-button"
+        (click)="loadEvents()">
+        ↻ Refresh
+      </button>
+    </div>
+
+    <!-- Loading -->
+    <div
+      class="loading-state"
+      *ngIf="isLoading">
+      <div class="spinner"></div>
+      <p>Loading your events...</p>
+    </div>
+
+    <!-- Empty State -->
+    <div
+      class="empty-state"
+      *ngIf="!isLoading && events.length === 0">
+
+      <div class="empty-icon">▣</div>
+
+      <h3>No events yet</h3>
+
+      <p>
+        Create your first event to start managing your event schedule.
+      </p>
+
+      <button
+        type="button"
+        class="primary-button"
+        (click)="resetForm()">
+        Create Your First Event
+      </button>
+
+    </div>
+
+    <!-- Event Table -->
+    <div
+      class="table-wrapper"
+      *ngIf="!isLoading && events.length > 0">
+
+      <table class="event-table">
+
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Date & Venue</th>
+            <th>Tickets</th>
+            <th>Price</th>
+            <th>Status</th>
+            <th class="actions-column">Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let event of events">
+
+            <!-- Event Details -->
+            <td>
+              <div class="event-title-cell">
+                <div class="event-avatar">
+                  {{ event.title.charAt(0).toUpperCase() }}
+                </div>
+
+                <div>
+                  <strong>{{ event.title }}</strong>
+
+                  <span class="event-id">
+                    Event #{{ event.id }}
+                  </span>
+                </div>
+              </div>
+            </td>
+
+            <!-- Date and Venue -->
+            <td>
+              <div class="date-cell">
+                <strong>
+                  {{ event.startDateUtc | date:'dd MMM yyyy' }}
+                </strong>
+
+                <span>
+                  {{ event.venue }}
+                </span>
+              </div>
+            </td>
+
+            <!-- Tickets -->
+            <td>
+              <div class="ticket-cell">
+                <strong>{{ event.availableTickets }}</strong>
+
+                <span>
+                  of {{ event.totalTickets }} available
+                </span>
+              </div>
+            </td>
+
+            <!-- Price -->
+            <td>
+              <strong class="price">
+                {{
+                  event.ticketPrice
+                    | currency:'INR':'symbol':'1.0-2'
+                }}
+              </strong>
+            </td>
+
+            <!-- Status -->
+            <td>
+              <span
+                class="status-badge"
+                [ngClass]="event.status.toLowerCase()">
+
+                <span class="status-dot"></span>
+
+                {{ event.status }}
+              </span>
+            </td>
+
+            <!-- Actions -->
+            <td>
+              <div class="action-buttons">
+
+                <button
+                  type="button"
+                  class="icon-button edit"
+                  title="Edit event"
+                  (click)="editEvent(event)">
+                  ✎
+                </button>
+
+                <button
+                  type="button"
+                  class="icon-button publish"
+                  title="Publish event"
+                  *ngIf="event.status === 'Draft'"
+                  (click)="publishEvent(event)">
+                  ↑
+                </button>
+
+                <button
+                  type="button"
+                  class="icon-button delete"
+                  title="Delete event"
+                  (click)="deleteEvent(event)">
+                  ×
+                </button>
+
+              </div>
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+</div>
